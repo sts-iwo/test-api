@@ -12,7 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: debug path
+        run: |
+          ls -al
 
       - name: install stable rust toolchain
         uses: dtolnay/rust-toolchain@stable
