@@ -15,15 +15,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: debug path
-        run: |
-          ls -al
-
       - name: install stable rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: build
-        uses: cargo build --release --verbose
+        run: cargo build --release --verbose
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4
